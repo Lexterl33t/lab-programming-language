@@ -11,6 +11,12 @@ lexer_s {
 } lexer_t;
 
 
+typedef
+struct sym_token_s {
+	char value;
+	token_t *(*decode)(lexer_t*);
+} sym_token_t;
+
 // Allocate new lexer chunk
 lexer_t *new_lexer(char *source);
 

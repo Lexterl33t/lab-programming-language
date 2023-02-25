@@ -6,11 +6,23 @@
 #include <stdio.h>
 #include <string.h>
 
+
+
 /*
  * Extern import
  */
 
 #include "../../inc/lexer/lexer.h"
+#include "../../inc/lexer/operators.h"
+
+
+
+const sym_token_t sym_table[] = {
+	{'+', &token_plus},
+	{'-', &token_minus},
+	{'/', &token_div},
+	{'*', &token_prod},
+};
 
 lexer_t *new_lexer(char *source) {
   	if (!source)

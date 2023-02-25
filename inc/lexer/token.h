@@ -1,6 +1,5 @@
 #ifndef TOKEN_H
 #define TOKEN_H
-
 typedef enum 
 token_e {
 	EOF_F,
@@ -54,6 +53,7 @@ token_s {
 	token_e kind;
 	char *value;
 } token_t;
+
 
 token_t *new_token(token_e kind, char *value);
 

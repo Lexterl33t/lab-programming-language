@@ -1,6 +1,8 @@
 #include "../../inc/lexer/token.h"
 #include <stdlib.h>
 
+
+
 token_t *
 new_token(token_e kind, char *value)
 {
@@ -20,7 +22,7 @@ new_token(token_e kind, char *value)
 	return (token);	
 }
 
-void 
+void
 free_token(token_t *token)
 {
 	free(token);
