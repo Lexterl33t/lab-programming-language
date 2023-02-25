@@ -17,14 +17,10 @@
 
 
 
-const sym_token_t sym_table[] = {
-	{'+', &token_plus},
-	{'-', &token_minus},
-	{'/', &token_div},
-	{'*', &token_prod},
-};
 
-lexer_t *new_lexer(char *source) {
+
+lexer_t *
+new_lexer(char *source) {
   	if (!source)
     	return (NULL);
 
