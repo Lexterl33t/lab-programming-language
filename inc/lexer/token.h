@@ -25,6 +25,8 @@ token_e {
 	MINUS,
 	DIV,
 	PROD,
+	MOD,
+	POWER,
 	EQ,
 	NEQ,
 	LESS,

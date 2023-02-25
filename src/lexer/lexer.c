@@ -14,8 +14,7 @@
 
 #include "../../inc/lexer/lexer.h"
 #include "../../inc/lexer/operators.h"
-
-
+#include "../../inc/lexer/symbols.h"
 
 
 
@@ -101,14 +100,22 @@ get_token(lexer_t *lexer)
 	skip_comments(lexer);
 	skip_whitespace(lexer);
 	
-				
+	if (search_sym(lexer->curr)) {
+		sym_byte_t sym_byte = get_sym_by_lexer_value(lexer->curr);
+		token = sym_byte.decode(lexer);
+	} else {
+		exit(-1);
+	}		
 	next_token(lexer);
 
 	return (token);
 }
 
 // Free lexer structure
-void free_lexer(lexer_t *lexer) {
+void 
+free_lexer(lexer_t *lexer) {
+	free(lexer->source);
   	free(lexer);
+	lexer->source = NULL;
   	lexer = NULL;
 }

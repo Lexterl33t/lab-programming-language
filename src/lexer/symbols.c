@@ -1,9 +1,7 @@
-#include <stddef.h>
-
 #include "../../inc/lexer/symbols.h"
 #include "../../inc/lexer/operators.h"
 
-#define SYM_TABLE_SIZE 4
+#define SYM_TABLE_SIZE 5
 
 const sym_byte_t sym_table[] = {
 	{'+', &token_plus},
